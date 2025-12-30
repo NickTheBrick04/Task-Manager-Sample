@@ -158,8 +158,8 @@ void undo(TaskQueue* q, TaskStack* undoStack, TaskStack* redoStack) {
     char* action = pop(undoStack);
     if (action == NULL) {
         printf("Nothing to undo.\n");
-    }
         return;
+    }
     if (strncmp(action, "Add:", 4) == 0) {
         unenqueue(q);
         printf("Undo: Removed task added: %s\n", action + 4);
